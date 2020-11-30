@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using FileManager;
+﻿using FileManager;
+using Microsoft.AspNetCore.Mvc; 
 
 namespace API.Controllers
 {
@@ -10,7 +10,7 @@ namespace API.Controllers
         [HttpPost]
         public ActionResult Upload(Payload obj)
         {
-            Program.UploadImage(obj.base64Image);
+            Uploader.UploadImage(obj.base64Image);
 
             return Ok(); 
         }

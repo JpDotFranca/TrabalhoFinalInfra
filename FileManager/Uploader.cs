@@ -3,11 +3,10 @@ using Microsoft.WindowsAzure.Storage.Blob;
 using System;
 using System.IO;
 using System.Net.Http;
-using System.Text;
 
 namespace FileManager
 {
-    public class Program
+    public static class Uploader
     {
         //static void Main(string[] args)
         //{
