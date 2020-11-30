@@ -32,7 +32,7 @@ namespace FileManager
             CloudBlobClient blobClient = storageacc.CreateCloudBlobClient();
             CloudBlobContainer container = blobClient.GetContainerReference("images");
 
-            string imageName = Guid.NewGuid().ToString() + "_" + DateTime.Now.DayOfWeek.ToString()+".jpg";
+            string imageName = Guid.NewGuid().ToString() + "_up_" + DateTime.Now.DayOfWeek.ToString()+".jpg";
 
             CloudBlockBlob blockBlob = container.GetBlockBlobReference(imageName);
             blockBlob.Properties.ContentType = "image/jpg";
