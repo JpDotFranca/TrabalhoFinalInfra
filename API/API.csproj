@@ -10,9 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="FileManager">
-      <HintPath>..\FileManager\bin\Debug\netcoreapp3.1\FileManager.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\FileManager\FileManager.csproj" />
   </ItemGroup>
 
 

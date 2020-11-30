@@ -5,6 +5,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.7.0" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
