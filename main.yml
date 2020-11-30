@@ -30,7 +30,7 @@ jobs:
 			  - name: dotnet build + publish
 			    run: |
 					dotnet build --configuration release
-					dotnet publish -v Release  -o '${{ env.AZURE_WEBAPP_PATH }}/API'
+					dotnet publish -c Release  -o '${{ env.AZURE_WEBAPP_PATH }}/API'
 
 			   - name: Deploy to App Service
 			     uses: azure/webapps-deploy@v2
