@@ -27,7 +27,7 @@ namespace FileManager
 
         public static void UploadImage(string base64Image)
         {
-            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=repositorioimagem;AccountKey=hrlJaGpOMgRqWvlq8TV9HY5aQGEtAYwmkEMhdCbVSh1lDGVsyS7R5D/4WfF6rLv6qoIwioy3rrRGDfIbj77t6w==;EndpointSuffix=core.windows.net";
+            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=contaimagens;AccountKey=LvabywfGYW++fYPJjel4Ntuh/LXRVGVyYO0ZhE/zKekY2pNhkNgL0wzin/5Tzdx4cDjLsMFLDx1Vckgkut6Pzg==;EndpointSuffix=core.windows.net";
             CloudStorageAccount storageacc = CloudStorageAccount.Parse(storageConnectionString);
 
             CloudBlobClient blobClient = storageacc.CreateCloudBlobClient();

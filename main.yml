@@ -1,0 +1,39 @@
+name: Deploy APP
+
+on: 
+	push:
+		branches:
+			- master
+
+env: 
+	AZURE_WEBAPP_NAME: imagesservices
+	AZURE_WEBAPP_PATH: '.'
+	DOTNET_VERSION: '3.1.403'
+
+jobs:
+	build-and-delopy:
+		run-on: ubuntu-latest
+		steps:
+
+			- uses: actions/checkout
+
+			- name: Login via Azure CLI
+				uses: azure/login@v1
+				with:
+					cred: ${{ secrets.AZURE_CREDENTIALS }}
+
+			 - name: SETUP .NET CORE
+			   uses: actions/setup/dotnet@v1
+			   with:
+				dotnet-version: ${{ env.DOTNET_VERSION }}
+
+			  - name: dotnet build + publish
+			    run: |
+					dotnet build --configuration release
+					dotnet publish -v Release  -o '${{ env.AZURE_WEBAPP_PATH }}/API'
+
+			   - name: Deploy to App Service
+			     uses: azure/webapps-deploy@v2
+				 with:
+				    app-name: ${{ env.AZURE_WEBAPP_NAME }}
+					package: '${{ env.AZURE_WEBAPP_PATH }}/API'
