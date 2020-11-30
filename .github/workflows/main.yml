@@ -30,10 +30,10 @@ jobs:
       - name: dotnet build + publish
         run: |
           dotnet build --configuration release
-          dotnet publish -v Release  -o '${{ env.AZURE_WEBAPP_PATH }}/API'
+          dotnet publish -v Release  -o '${{ env.AZURE_WEBAPP_PATH }}/FileManager'
 
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          package: '${{ env.AZURE_WEBAPP_PATH }}/API'
+          package: '${{ env.AZURE_WEBAPP_PATH }}/FileManager'
