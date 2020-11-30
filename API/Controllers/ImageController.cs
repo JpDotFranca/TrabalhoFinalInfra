@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using FileManager;
 
 namespace API.Controllers
 {
@@ -9,7 +10,7 @@ namespace API.Controllers
         [HttpPost]
         public ActionResult Upload(Payload obj)
         {
-            FileManager.Program.UploadImage(obj.base64Image);
+            Program.UploadImage(obj.base64Image);
 
             return Ok();
         }
