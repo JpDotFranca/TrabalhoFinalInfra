@@ -12,7 +12,7 @@ namespace API.Controllers
         {
             Uploader.UploadImage(obj.base64Image);
 
-            return Ok("Imagem processada e armazenada com sucesso, Ana :D!"); 
+            return Ok("Imagem processada e armazenada com sucesso, Marcelo :D!"); 
         }
 
         public class Payload
